@@ -15,6 +15,6 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "myTFResourceGroup"
+  name     = "CloudNativeAzure-group"
   location = "West Europe"
 }
