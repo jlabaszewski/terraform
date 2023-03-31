@@ -1,28 +1,30 @@
 {
-  "builders": [{
-    "type": "azure-arm",
+    "builders": [
+        {
+            "type": "azure-arm",
 
-    "client_id": "<place-your-client_id-here>",
-    "client_secret": "<place-your-client_secret-here>",
-    "tenant_id": "<place-your-tenant-id-here>",
-    "subscription_id": "<place-your-subscription-here>",
+            #"client_id": "<place-your-client_id-here>",
+            #"client_secret": "<place-your-client_secret-here>",
+            "tenant_id": "a8ce5fa1-05f3-46eb-bf44-1b2c493d43a4",
+            "subscription_id": "3f1d97bf-cab5-435c-b99f-42efd8fda629",
 
-    "managed_image_resource_group_name": "CloudNativeAzure-group",
-    "managed_image_name": "myfirstPackerImage",
+            "managed_image_resource_group_name": "CloudNativeAzure-group",
+            "managed_image_name": "myfirstPackerImage",
 
-    "os_type": "Linux",
-    "image_publisher": "Canonical",
-    "image_offer": "UbuntuServer",
-    "image_sku": "16.04-LTS",
+            "os_type": "Linux",
+            "image_publisher": "Canonical",
+            "image_offer": "UbuntuServer",
+            "image_sku": "16.04-LTS",
 
-    "azure_tags": {
-        "env": "Production",
-        "task": "Image deployment"
-    },
+            "azure_tags": {
+                "env": "TEST",
+                "task": "Image deployment"
+            },
 
-    "location": "East US",
-    "vm_size": "Standard_DS1_v2"
-  }],
+            "location": "West Europe",
+            "vm_size": "Standard_DS1_v2"
+        }
+    ],
   "provisioners": [{
     "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
     "inline": [
